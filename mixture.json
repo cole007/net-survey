@@ -1,0 +1,47 @@
+{
+  "autoPrefixer": {
+    "active": true,
+    "sourceMap": false,
+    "browsers": [
+      "last 1 version",
+      "> 1%",
+      "ie 8",
+      "ie 7"
+    ]
+  },
+  "convertHtml": {
+    "relativePaths": false
+  },
+  "customRubyPath": null,
+  "debug": false,
+  "domain": null,
+  "followLeader": false,
+  "lintScripts": true,
+  "modelSource": null,
+  "preprocessorLocations": [
+    "_assets/css/scss",
+    "_assets/js"
+  ],
+  "preprocessorScriptOutput": "_assets/js",
+  "preprocessorStyleOutput": "_assets/css",
+  "projectDescription": "Tool to analyse responses from the net magazine money survey",
+  "projectName": "net magazine survey",
+  "publishedId": null,
+  "sass": {
+    "outputStyle": "compressed",
+    "sourceMap": true,
+    "lineNumbers": false,
+    "cache": false,
+    "lineNumbers": false,
+    "debugInfo": false,
+    "globbing": false,
+    "useLibSass": false
+  },
+  "serverHostname": null,
+  "serverPort": null,
+  "templateDefaultLayout": "layout",
+  "templateDefaultPage": "index",
+  "templateDirectory": "templates",
+  "type": "simple",
+  "useCompass": false
+}

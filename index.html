@@ -1,1 +1,94 @@
-This is a test
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]><html class="no-js lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset='utf-8'>
+  <title>Title</title>
+  <meta content='' name='description'>
+  <meta content='user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
+  <link href='/favicon.ico' rel='shortcut icon'>
+  <link href='humans.txt' rel='author' type='text/plain'>
+  <script>
+    var html = document.getElementsByTagName("html")[0];
+    if(html.className == "no-js") html.className = html.className.replace("no-js", "js"); // user has JS enabled 
+    function debounce(a,b,c){var d;return function(){var e=this,f=arguments;clearTimeout(d),d=setTimeout(function(){d=null,c||a.apply(e,f)},b),c&&!d&&a.apply(e,f)}};
+  </script>
+  <script src="//use.typekit.net/yzz2asf.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+  <!--[if (lt IE 9) & (!IEMobile)]>
+    <link href='/_assets/css/ie.css' rel='stylesheet'>
+  <![endif]-->
+  <link href='/_assets/css/style.css' rel='stylesheet'>  
+</head>
+<body>
+    <form class="process" data-usd="400" data-gbp="260" data-eur="350">
+    <p class="metric metric--work">
+        <label for="work">
+            Work
+        </label>
+        <select id="work">
+            <option value="1">Freelance</option>
+            <option value="0.67125">Employed</option>
+            <option value="1.6875">Agency (2+ employees)</option>            
+        </select>
+    </p>
+    <p class="metric metric--skill">
+        <label for="skill">
+            Level
+        </label>
+        <select id="skill">
+            <option value="0.375">Beginner</option>
+            <option value="0.66">Intermediate</option>
+            <option value="1.3125">Pro</option>
+        </select>
+    </p>
+    <p class="metric metric--locale">            
+        <label for="locale">
+            Location
+        </label>
+        <select id="locale">
+            <option value="1">Europe</option>
+            <option value="1.125">North America</option>
+            <option value="1.20375">Oceania</option>
+            <option value="0.125">Asia</option>
+            <option value="0.6675">Africa</option>
+            <option value="0.0875">South America</option>
+        </select>
+    </p>
+        
+    </form>
+
+    <div class="command">
+        <p class="usd"><span class="curr">$</span><span class="val">0</span>/day</p>
+        <p class="gbp"><span class="curr">£</span><span class="val">0</span>/day</p>
+        <p class="eur"><span class="curr">€</span><span class="val">0</span>/day</p>
+    </div>
+    
+    <script src="/_assets/js/libs/jquery-1.11.2.min.js"></script>
+    <script src="/_assets/js/libs/jquery.customSelect.min.js"></script>
+    <script src="/_assets/js/script.js"></script>
+    <script>
+        $(document).ready(function() {
+            // $('.command p').text(400);
+            var usd = $('.process').attr('data-usd');
+            var gbp = $('.process').attr('data-gbp');
+            var eur = $('.process').attr('data-eur');
+            $('.process').find('select').customSelect().on('change',function() {
+                // alert($(this).val());
+                var base = 1;
+                $('.process').find('select').each(function() {
+                    var val = $(this).val();
+                    if (val > 0) {
+                        base *= val;
+                    }
+                });
+                console.log(base);
+                $('.command p.usd').find('span.val').text((usd * base).toFixed(2));
+                $('.command p.gbp').find('span.val').text((gbp * base).toFixed(2));
+                $('.command p.eur').find('span.val').text((eur * base).toFixed(2));
+            });
+        });
+    </script>
+    </body>
+    </html>
