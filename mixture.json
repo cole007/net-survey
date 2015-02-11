@@ -22,14 +22,14 @@
     "_assets/css/scss",
     "_assets/js"
   ],
-  "preprocessorScriptOutput": "Build/_assets/js",
-  "preprocessorStyleOutput": "Build/_assets/css",
+  "preprocessorScriptOutput": "_assets/js",
+  "preprocessorStyleOutput": "_assets/css",
   "projectDescription": "Tool to analyse responses from the net magazine money survey",
   "projectName": "net magazine survey",
   "publishedId": null,
   "sass": {
     "outputStyle": "compressed",
-    "sourceMap": false,
+    "sourceMap": true,
     "lineNumbers": false,
     "cache": false,
     "lineNumbers": false,

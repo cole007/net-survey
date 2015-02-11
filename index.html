@@ -4,7 +4,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
   <meta charset='utf-8'>
-  <title>Title</title>
+  <title>net magazine | our money survey says</title>
   <meta content='' name='description'>
   <meta content='user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
   <link href='/favicon.ico' rel='shortcut icon'>
@@ -22,47 +22,58 @@
   <link href='_assets/css/style.css' rel='stylesheet'>  
 </head>
 <body>
-    <form class="process" data-usd="400" data-gbp="260" data-eur="350">
-    <p class="metric metric--work">
-        <label for="work">
-            Work
-        </label>
-        <select id="work">
-            <option value="1">Freelance</option>
-            <option value="0.67125">Employed</option>
-            <option value="1.6875">Agency (2+ employees)</option>            
-        </select>
-    </p>
-    <p class="metric metric--skill">
-        <label for="skill">
-            Level
-        </label>
-        <select id="skill">
-            <option value="0.375">Beginner</option>
-            <option value="0.66">Intermediate</option>
-            <option value="1.3125">Pro</option>
-        </select>
-    </p>
-    <p class="metric metric--locale">            
-        <label for="locale">
-            Location
-        </label>
-        <select id="locale">
-            <option value="1">Europe</option>
-            <option value="1.125">North America</option>
-            <option value="1.20375">Oceania</option>
-            <option value="0.125">Asia</option>
-            <option value="0.6675">Africa</option>
-            <option value="0.0875">South America</option>
-        </select>
-    </p>
-        
-    </form>
+    <div class="wrapper">
+        <header class="header">
+            <h1>net magazine | money survey</h1>
+        </header>
+        <form class="process" data-usd="400" data-gbp="260" data-eur="350">
+        <p class="metric metric--work">
+            <label for="work">
+                Work
+            </label>
+            <select id="work">
+                <option value="1">Choose</option>
+                <option value="1">Freelance</option>
+                <option value="0.67125">Employed</option>
+                <option value="1.6875">Agency (2+ employees)</option>            
+            </select>
+        </p>
+        <p class="metric metric--skill">
+            <label for="skill">
+                Level
+            </label>
+            <select id="skill">
+                <option value="1">Choose</option>
+                <option value="0.375">Beginner</option>
+                <option value="0.66">Intermediate</option>
+                <option value="1.3125">Pro</option>
+            </select>
+        </p>
+        <p class="metric metric--locale">            
+            <label for="locale">
+                Location
+            </label>
+            <select id="locale">
+                <option value="1">Choose</option>
+                <option value="1">Europe</option>
+                <option value="1.125">North America</option>
+                <option value="1.20375">Oceania</option>
+                <option value="0.125">Asia</option>
+                <option value="0.6675">Africa</option>
+                <option value="0.0875">South America</option>
+            </select>
+        </p>
+            
+        </form>
 
-    <div class="command">
-        <p class="usd"><span class="curr">$</span><span class="val">0</span>/day</p>
-        <p class="gbp"><span class="curr">£</span><span class="val">0</span>/day</p>
-        <p class="eur"><span class="curr">€</span><span class="val">0</span>/day</p>
+        <div class="command">
+            <p class="usd"><span class="curr">$</span><span class="val">0</span>/day</p>
+            <p class="gbp"><span class="curr">£</span><span class="val">0</span>/day</p>
+            <p class="eur"><span class="curr">€</span><span class="val">0</span>/day</p>
+        </div>
+        <footer class="footer">
+            Based on survey carried out for <a href="">net magazine</a> by <a href="http://twitter.com/cole007">Cole Henley</a>. <a href="">Download the data</a>.
+        </footer>
     </div>
     
     <script src="_assets/js/libs/jquery-1.11.2.min.js"></script>
@@ -71,6 +82,7 @@
     <script>
         $(document).ready(function() {
             // $('.command p').text(400);
+            
             var usd = $('.process').attr('data-usd');
             var gbp = $('.process').attr('data-gbp');
             var eur = $('.process').attr('data-eur');
@@ -83,7 +95,6 @@
                         base *= val;
                     }
                 });
-                console.log(base);
                 $('.command p.usd').find('span.val').text((usd * base).toFixed(2));
                 $('.command p.gbp').find('span.val').text((gbp * base).toFixed(2));
                 $('.command p.eur').find('span.val').text((eur * base).toFixed(2));
