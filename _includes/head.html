@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]><html class="no-js lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset='utf-8'>
+  <title>{{ page.title }}</title>
+  <meta content='' name='description'>
+  <meta content='width=device-width, initial-scale=1' name='viewport'>
+  <link href='{{ site.baseurl }}/favicon.ico' rel='shortcut icon'>
+  <script>
+    var html = document.getElementsByTagName("html")[0];
+    if(html.className == "no-js") html.className = html.className.replace("no-js", "js"); // user has JS enabled 
+    function debounce(a,b,c){var d;return function(){var e=this,f=arguments;clearTimeout(d),d=setTimeout(function(){d=null,c||a.apply(e,f)},b),c&&!d&&a.apply(e,f)}};
+  </script>
+  <script src="//use.typekit.net/yzz2asf.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+  <!--[if (lt IE 9) & (!IEMobile)]>
+    <link href='_assets/css/ie.css' rel='stylesheet'>
+  <![endif]-->
+  <link href='{{ site.baseurl }}/_assets/css/style.css' rel='stylesheet'>  
+</head>
+<body>
